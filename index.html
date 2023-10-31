@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notion Calendar Widget</title>
+</head>
+<body>
+    <div id="calendar"></div>
+
+    <script>
+        // Generate today's date and weekday
+        const date = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const dateString = date.toLocaleDateString('en-US', options);
+
+        // List of fonts to choose from
+        const fonts = ['Arial', 'Verdana', 'Georgia', 'Courier', 'Times New Roman'];
+
+        // Generate a random font
+        const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
+
+        // Generate a random color (simple random hex color)
+        const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+
+        // Apply the date, font, and color to the div
+        const calendarDiv = document.getElementById('calendar');
+        calendarDiv.innerHTML = dateString;
+        calendarDiv.style.fontFamily = randomFont;
+        calendarDiv.style.color = randomColor;
+    </script>
+</body>
